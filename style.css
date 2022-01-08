@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.content img{
+    border:5px solid #020a7a;
+    border-radius: 50%;
+    position: relative;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+.content img:hover{
+    border:5px solid white;   
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    min-height: 100vh;
+    background: #020a7a;
+}
+
+.container{
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-template-rows: 100px,auto;
+    margin: 40px;
+    grid-auto-flow: dense;
+    gap: 10px;
+
+}
+
+
+
+
+
+.container .box{
+background: linear-gradient(-45deg,#fd4646ea,hsl(236, 95%, 62%),#d85ffd,#1cd9fa,white);
+background-size: 400% 400%;
+animation: king 5s ease  infinite;
+padding: 20px;
+display: grid;
+font-size:20px ;
+place-items: center;
+text-align: center;
+transition: 0.5s;
+
+
+}
+
+@keyframes king {
+	0% {
+		background-position: 0% 50%;/*The background-position property sets the starting position of a background image*/
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+  }
+
+  .container .box:hover{
+      background:#0000ff ;
+      color: white;
+     
+  }
+
+  .container .box:nth-child(1){
+      grid-column: span 2;
+      grid-row:  span 1;
+  }
+  .container .box:nth-child(2){
+    grid-column: span 1;
+    grid-row:  span 2;
+}
+.container .box:nth-child(4){
+    grid-column: span 1;
+    grid-row:  span 2;
+}
+.container .box:nth-child(5){
+    grid-column: span 3;
+    grid-row:  span 1;
+}
+
+@media (max-width:1000px){
+    .container{
+    
+        grid-template-columns: repeat(auto-fill, minmax(50%,1fr));
+        grid-template-rows: auto,auto;
+      
+    }
+
+    .container .box{
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
+
+
+
